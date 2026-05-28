@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shudhanshu</title>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("nqC3yCWphq1NyZrdT"); // Replace with your actual Public Key
+      })();
+    </script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -15,8 +24,11 @@
   </head>
   <body>
     <div id="main">
+      <div id="up">
+        <a href="#nav"><i class="fa-solid fa-angle-up"></i></a>
+      </div>
       <div id="nav">
-        <div id="name"><h2>Shudhanshu</h2></div>
+        <div id="logoName"><h2>Shudhanshu</h2></div>
         <div id="link">
           <a href="#home">Home</a>
           <a href="#education">Education</a>
@@ -29,8 +41,18 @@
         <div id="section1">
           <h2>Hello, I'm <span>Shudhanshu</span></h2>
           <p>Full Stack Developer | Web Enthusiast</p>
-          <button>Dawanlo CV</button>
-          <button>Hire Me</button>
+          <button>
+            <a
+              href="material/RESUME_SHUDHANSHU_KUMAR.pdf"
+              download="Shudhanshu_Kumar_Resume.pdf"
+              >Download Resume</a
+            >
+          </button>
+          <button>
+            <a href="https://forms.gle/XwjFkB5yagbfEve77" target="_blank"
+              >Hire Me</a
+            >
+          </button>
         </div>
         <div id="section2">
           <img src="material/profilePhoto.png" alt="" />
@@ -91,43 +113,56 @@
     <div id="projects">
       <h2>Projects</h2>
       <div class="card">
-        <img src="material/ecomerce.jpg" alt="not found"/>
+        <img src="material/ecomerce.jpg" alt="not found" />
         <h3>E-Commerce Web Application</h3>
         <p>React, Node.js, Express,MongoDB</p>
         <button>View Project</button>
       </div>
 
       <div class="card">
-        <img src="material/chat.jpg" alt="not found"/>
+        <img src="material/chat.jpg" alt="not found" />
         <h3>Real-Time Chat Application</h3>
         <p>Node.js, Express, Socket.io, React</p>
         <button>View Project</button>
       </div>
 
       <div class="card">
-        <img src="material/stu.jpg" alt="not found"/>
+        <img src="material/stu.jpg" alt="not found" />
         <h3>Student Management System</h3>
         <p>Full-Stack (Node.js, Express, MySQL)</p>
         <button>View Project</button>
       </div>
 
       <div class="card">
-        <img src="material/task.jpg" alt="not found"/>
+        <img src="material/task.jpg" alt="not found" />
         <h3>Task Manager with Authentication</h3>
         <p>React, Redux, Node.js, PostgreSQL</p>
         <button>View Project</button>
       </div>
     </div>
 
-    <div id="contact">
+    <section id="contact">
       <h2>Contact Me</h2>
-      <form>
-        <input type="text" placeholder="Your name" required /><br />
-        <input type="email" placeholder="Your email" required /><br />
-        <textarea placeholder="Your message" rows="3" required></textarea><br />
-        <input id="submit" type="submit" value="Send" />
+
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="name">Your name*</label>
+          <input type="text" id="name" name="user_name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Your email*</label>
+          <input type="email" id="email" name="user_email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your message*</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" id="send-btn">Send</button>
       </form>
-    </div>
+    </section>
 
     <div id="footer">
       <p>&copy; 2026 Shudhanshu Kumar. All rights reserved.</p>
